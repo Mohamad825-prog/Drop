@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="Nav Sec-Content">
+            <a href="#" class="Nav-Log">
+                <h2 class="Log-text">Drop Cafe</h2>
+                <h3 class="Log-text">By Ghassan Naffaa</h3>
+            </a>
+            <ul class="Nav-menu">
+                <li class="Nav-item">
+                    <a href="#intro" class="Nav-link">Home</a>
+                </li>
+                <li class="Nav-item">
+                    <a href="#about" class="Nav-link">About</a>
+                </li>
+                <li class="Nav-item">
+                    <a href="#gallery" class="Nav-link">Gallery</a>
+                </li>
+                <li class="Nav-item">
+                    <a href="#menu" class="Nav-link">Menu</a>
+                </li>
+                <li class="Nav-item">
+                    <a href="#contact" class="Nav-link">Contact</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+
+        <section class="Intro-sec" id="intro">
+            <div class="Section-Cont">
+                <div class="Intro-Details">
+                    <h2 class="Title">Drop Cafe</h2>
+                    <h3 class="Subtit">Coffee starts with a ... DROP!</h3>
+                    <p class="Descrip">Welcome to Our Coffee Shop,
+                        When Drop is All it Takes to Turn Your Morning Around!</p>
+
+                    <div class="Buttons">
+                        <a href="javascript:void(0)" class="Button order-now" onclick="showModal()">Order Now</a>
+                        <a href="#contact" class="Button contact-us">Contact Us</a>
+                    </div>
+                </div>
+                <div class="Intro-image">
+                    <img src="images/photoIntro.jpg" alt="Intro" class="Intro-image">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="About-sec" id="about">
+            <div class="Section-cont">
+                <div class="About-image-wrapper">
+                    <img src="images/photo12.jpg" alt="About" class="About-image">
+                </div>
+                <div class="About-details">
+                    <h2 class="Section-title">About Us</h2>
+                    <p class="Text">At Coffee Shop in Saida,
+                        Drop is the Best Coffee, Cookies, and Good Vibes! The place is modern and decorated with taste.
+                            They have a good selection of desserts: croissants,cakes,muffins.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="Gallery-sec" id="gallery">
+            <h2 class="Section-title">Gallery</h2>
+            <div class="Section-cont">
+                <ul class="Gallery-list">
+                    <li class="Gallery-item">
+                        <img src="images/photo14.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="Gallery-item">
+                        <img src="images/photo15.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="Gallery-item">
+                        <img src="images/photo16.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="Gallery-item">
+                        <img src="images/photo17.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="Gallery-item">
+                        <img src="images/photo18.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                    <li class="Gallery-item">
+                        <img src="images/photo19.jpg" alt="Gallery" class="gallery-image">
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section class="Menu-sec" id="menu">
+            <h2 class="Section-title">Our Menu</h2>
+            <div class="Section-cont">
+                <ul class="Menu-list">
+                    <li class="Menu-item">
+                        <img src="images/photo1.png" alt="Hot Drinks" class="menu-image">
+                        <div class="Menu-det">
+                            <h3 class="name">Hot Drinks</h3>
+                            <h4 class="items">Lebanese Coffe -><span class="separator">2.50$</span></h4>
+                            <h4 class="items">American Coffe -><span class="separator">2.50$</span></h4>
+                            <h4 class="items">Espresso -><span class="separator">3.00$</span></h4>
+                        </div>
+                    </li>
+                    <li class="Menu-item">
+                        <img src="images/photo11.jpg" alt="Cold Drinks" class="menu-image">
+                        <div class="Menu-det">
+                            <h3 class="name">Cold Drinks</h3>
+                            <h4 class="items">Iced Late -><span class="separator">4.50$</span></h4>
+                            <h4 class="items">Matcha Latte -><span class="separator">3.00$</span></h4>
+                            <h4 class="items">Mocha Latte -><span class="separator">4.00$</span></h4>
+                        </div>
+                    </li>
+                    <li class="Menu-item">
+                        <img src="images/photo13.jpg" alt="Dessert" class="menu-image">
+                        <div class="menu-details">
+                            <h3 class="name">Dessert</h3>
+                            <h4 class="items">Mango -><span class="separator">3.50$</span></h4>
+                            <h4 class="items">Blueberry -><span class="separator">3.00$</span></h4>
+                            <h4 class="items">Strawberry -><span class="separator">3.50$</span></h4>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="Modal" id="orderModal">
+                    <div class="Modal-content">
+                        <span class="Close-button" onclick="closeModal()">&times;</span>
+
+                        <form action="order_action.php" method="POST" id="orderForm">
+                            <h2 class="order-button">Place The Order</h2>
+
+                            <input type="text" class="form-input" name="text" placeholder="Name" required>
+                            <input type="number" class="form-input" name="people" placeholder="How Many People ?"
+                                required>
+                            <input type="date" class="form-input" name="date" placeholder="Date" required>
+                            <textarea name="special" class="form-input" placeholder="Special Requests"
+                                required></textarea>
+                            <button type="submit" class="submit-button">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="Contact-sec" id="contact">
+            <h2 class="Section-title">Contact Us</h2>
+            <div class="Section-cont">
+
+                <ul class="Contact-info-list">
+                    <li class="Contact-info">
+                        <i class="fa-brands fa-facebook"></i>
+                        <a href="https://facebook.com/dropcaffe" target="_blank">@Drop Caffe</a>
+                    </li>
+                    <li class="Contact-info">
+                        <i class="fa-brands fa-instagram"></i>
+                        <a href="https://instagram.com/dropcaffe" target="_blank">@Drop Caffe</a>
+                    </li>
+                    <li class="Contact-info">
+                        <i class="fa-brands fa-twitter"></i>
+                        <a href="https://twitter.com/dropcaffe" target="_blank">@Drop Caffe</a>
+                    </li>
+                    <li class="Contact-info">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <a href="https://wa.me/96170123456" target="_blank">+961 70 123 456</a>
+                    </li>
+                </ul>
+
+                <form action="contact_action.php" class="Contact-form" method="POST">
+                    <input type="text" name="text" placeholder="Your Name" class="form-input" required>
+                    <input type="email" name="email" placeholder="Your Email" class="form-input" required>
+                    <textarea name="message" placeholder="Your Message" class="form-input" required></textarea>
+                    <button class="submit-button">Submit</button>
+                </form>
+
+            </div>
+        </section>
+
+
+        <footer class="Footer-sec">
+            <div class="Section-cont">
+                <p class="copyright-text"> Drop Coffee - 2025 </p>
+
+                <div class="Social-link-list">
+                    <a href="https://www.facebook.com" target="_blank" class="social-link"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" class="social-link"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" class="social-link"><i
+                            class="fa-brands fa-twitter"></i></a>
+                </div>
+
+            </div>
+        </footer>
+
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
